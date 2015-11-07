@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/WebServices/jiexi.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/WebServices/soap.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/com/suntrans/ibmsdemo/AB.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/com/suntrans/ibmsdemo/Channel_Activity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/com/suntrans/ibmsdemo/Config_Activity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/com/suntrans/ibmsdemo/Hourse_Activity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/com/suntrans/ibmsdemo/Insert_Activity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/com/suntrans/ibmsdemo/LogIn_Activity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/com/suntrans/ibmsdemo/Main_Activity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/com/suntrans/ibmsdemo/Mode_Activity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/com/suntrans/ibmsdemo/Online_Activity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/com/suntrans/ibmsdemo/Password_Activity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/com/suntrans/ibmsdemo/Perameter_Activity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/com/suntrans/ibmsdemo/Room_Activity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/com/suntrans/ibmsdemo/ServerConfig_Activity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/com/suntrans/ibmsdemo/SettingScene_Activity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/com/suntrans/ibmsdemo/Update_Activity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/com/suntrans/ibmsdemo/Welcome_Activity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/convert/ToneLayer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/database/DbHelper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/pulltofresh/IPullDownElastic.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/pulltofresh/PullDownElasticImp.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/pulltofresh/PullDownScrollView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/pulltofresh/Utils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/views/MainPopview.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/views/RiseNumberBase.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/views/RiseNumberTextView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/views/SceneFragment.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/views/Switch.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/views/TouchListener.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/wheel/TosAbsSpinner.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/wheel/TosAdapterView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/wheel/TosGallery.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/IBMS_DEMO/src/main/java/wheel/WheelView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/ILoadingLayout.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/IPullToRefresh.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/LoadingLayoutProxy.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/OverscrollHelper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/PullToRefreshAdapterViewBase.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/PullToRefreshBase.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/PullToRefreshExpandableListView.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/PullToRefreshGridView.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/PullToRefreshHorizontalScrollView.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/PullToRefreshListView.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/PullToRefreshScrollView.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/PullToRefreshWebView.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/extras/PullToRefreshWebView2.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/extras/SoundPullEventListener.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/internal/EmptyViewMethodAccessor.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/internal/FlipLoadingLayout.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/internal/IndicatorLayout.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/internal/LoadingLayout.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/internal/RotateLoadingLayout.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/internal/Utils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/internal/ViewCompat.java" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>
+

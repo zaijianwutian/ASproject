@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.suntrans.ibmsdemo" >
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+   
+    <!-- android:windowSoftInputMode="stateHidden|adjustResize" -->
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".Welcome_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:label="@string/app_name" >
+            <intent-filter>      <!-- 下面两行设置初始activity -->
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:name=".LogIn_Activity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:label="登录" >
+        </activity>
+
+        <activity
+            android:name=".Password_Activity"
+            android:label="修改密码" >
+        </activity>
+
+        <activity
+            android:name=".Mode_Activity"
+            android:label="模式选择" >
+        </activity>
+
+        <activity
+            android:name=".Perameter_Activity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:label="参数查看" >
+        </activity>
+        <activity
+            android:name=".Config_Activity"
+            android:label="参数配置" >
+        </activity>
+        <activity
+            android:name=".Main_Activity"
+            android:label="房间" >
+        </activity>
+
+        <activity
+            android:name=".Dining_Activity"
+            android:label="房子" >
+        </activity>
+
+        <activity
+            android:name=".Hourse_Activity"
+            android:label="选择房间" >
+        </activity>
+
+        <activity
+            android:name=".Room_Activity"
+            android:hardwareAccelerated="false"
+            android:label="房间开关" >
+        </activity>
+
+        <activity
+            android:name=".Insert_Activity"
+            android:label="添加开关" >
+        </activity>
+
+        <activity
+            android:name=".Online_Activity"
+            android:label="在线设备" >
+        </activity>
+
+        <activity
+            android:name=".Channel_Activity"
+            android:label="开关控制" >
+        </activity>
+
+
+        <activity
+            android:name=".Update_Activity"
+            android:label="修改开关" >
+        </activity>
+
+        <activity
+            android:name=".SettingScene_Activity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:label="编辑场景" >
+        </activity>
+
+        <activity
+            android:name=".ServerConfig_Activity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:label="配置服务器端口" >
+        </activity>
+    </application>
+
+
+</manifest>

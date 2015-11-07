@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" 
+    android:background="@color/transparent">
+    
+	
+   
+    <TextView
+        android:id="@+id/channel"
+        android:layout_width="0.0dip"
+        android:layout_height="45dip"
+        android:layout_weight="1"
+        android:gravity="center"    
+         
+        android:textColor="@color/orange"
+        android:textSize="17sp"
+        android:text="通道号"
+   />
+     <!--  </ScrollView>  -->
+    
+    <EditText
+        android:id="@+id/area"
+        android:layout_width="0.0dip"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_weight="2"
+        android:textColor="@color/blue"
+   		android:text="区域"
+   		android:background="#00ffffff"
+   		android:textSize="17sp"
+   		android:textCursorDrawable='@null'
+        />
+    <ImageView
+         android:id="@+id/img_area"
+         android:layout_width="23dip"
+         android:layout_height="20dip"
+         android:layout_gravity="center"
+         android:src="@drawable/ic_down"
+         android:scaleType="fitXY"/>
+     <EditText
+        android:id="@+id/name"
+        android:layout_width="0.0dip"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_weight="2"
+        android:textColor="@color/purple"
+   		android:text="名称"
+   		android:background="#00ffffff"
+   		android:textSize="17sp"
+   		android:textCursorDrawable='@null'
+        />
+     <ImageView
+         android:id="@+id/img_name"
+         android:layout_width="23dip"
+         android:layout_height="20dip"
+         android:layout_gravity="center"
+         android:src="@drawable/ic_down"
+         android:layout_marginRight="5dip"
+         android:scaleType="fitXY"/>
+</LinearLayout>

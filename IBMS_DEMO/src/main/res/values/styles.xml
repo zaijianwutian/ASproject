@@ -1,0 +1,75 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+         <item name="android:actionBarSize">50dip</item>
+    </style>
+    
+    
+    <!-- 主界面的button格式 -->
+    <style name="MainButton" >
+        <item name="android:textColor">@color/blue</item> 
+        <item name="android:textSize">7pt</item> 
+        <item name="android:layout_weight">1</item> 
+        
+        </style>
+        
+    <!-- 开关按钮前的TextView样式 -->
+    <style name="myTextView" >  
+	<item name="android:textSize">20sp</item>  
+	<item name="android:textColor">#87cefa</item>  
+	</style> 
+	
+    <!-- 主界面button上的文字格式 -->
+      <style name="text_home_style1">
+        <item name="android:textSize">17.0dip</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+
+    <style name="text_home_style2">
+        <item name="android:textSize">15.0dip</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="text_home_style3">
+        <item name="android:textSize">15.0dip</item>
+        <item name="android:textColor">#80ffffff</item>
+    </style>
+
+    <style name="text_home_style4">
+        <item name="android:textSize">15.0dip</item>
+        <item name="android:textColor">#aaffffff</item>
+    </style>
+ 	<style name="text_10_ffffff_a65">
+        <item name="android:textSize">10.0dip</item>
+        <item name="android:textColor">#a6ffffff</item>
+    </style>
+    
+ 	<!-- 项目中用到的分割线ImagView格式 -->
+ 	<style name="divider">
+ 	    <item name="android:layout_width">fill_parent</item>
+ 	    <item name="android:layout_height">1dip</item>
+ 	    <item name="android:background">@color/grey</item>
+ 	    <item name="android:layout_marginLeft">8dip</item>
+ 	    <item name="android:layout_marginRight">8dip</item>
+ 	    <item name="android:layout_marginTop">0dip</item>
+ 	    <item name="android:layout_marginBottom">4dip</item>
+   </style>
+
+	 
+ 	
+ 
+</resources>

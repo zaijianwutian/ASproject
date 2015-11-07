@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/transparent"
+    android:orientation="vertical" >   
+    <TextView
+	        android:layout_width="fill_parent"
+	        android:layout_height="50dip"	       
+	        android:id="@+id/tx_title"
+	        android:paddingLeft="10dip"
+	        android:gravity="center"
+	        android:text="主卧顶灯"
+	        android:textSize="18sp"
+	        android:textColor="@color/blue"
+	        />
+    
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.4dip"
+        android:background="@color/gray"
+        />
+    <LinearLayout 
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <!-- 第一个仪表 -->
+	   
+	    <RelativeLayout  
+		    android:layout_width="200dip"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"	   	    
+		    android:gravity="center"	
+		    android:layout_gravity="center"	   
+		    >
+		<!--     电压仪表盘 -->
+	    <ImageView
+	        android:layout_width="100dip"
+	        android:layout_height="wrap_content"
+	        android:scaleType="centerInside"
+	        android:id="@+id/img1"	  
+	        android:layout_centerInParent="true"      
+	       
+	        android:src="@drawable/dashboard_u" />
+		
+		<ImageView
+		    android:id="@+id/img2"
+		    android:layout_width="100dip"
+		    android:layout_height="wrap_content"
+		    android:scaleType="centerInside"
+		    android:layout_centerInParent="true"   
+		    android:src="@drawable/signsec_pointer_01" />
+		<LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_below="@id/img1"
+		    android:layout_marginTop="0dip"
+		    android:orientation="horizontal"
+		    android:gravity="center"
+		    >
+			<TextView
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="电压："			    	    		    
+			    android:textColor="@color/black" 			    
+		        android:textSize="16sp" 
+		       
+		        android:gravity="center"		        
+		        />
+			<views.RiseNumberTextView
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:id="@+id/tx_u"		    
+			    android:text="0"		   			   
+		        android:textColor="@color/purple" 
+		        android:textSize="24sp" 
+		        android:gravity="center"
+			    />
+			<TextView
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="  V"
+			    android:layout_below="@id/img1"			    		    
+			    android:textColor="@color/grey" 			    
+		        android:textSize="19sp" 
+		        android:gravity="center"		      
+		        />
+		</LinearLayout>
+		</RelativeLayout>
+		 <!--  第一个仪表结束 -->
+	</LinearLayout>
+	
+    <LinearLayout 
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <!-- 第二个仪表 -->
+	   
+	    <RelativeLayout  
+		    android:layout_width="200dip"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"	   	    
+		    android:gravity="center"		
+		    android:layout_gravity="center"   
+		    >
+		<!--     电流仪表盘 -->
+	    <ImageView
+	        android:layout_width="100dip"
+	        android:layout_height="wrap_content"
+	        android:scaleType="centerInside"
+	        android:id="@+id/img3"	       
+	         android:layout_centerInParent="true"   
+	        android:src="@drawable/dashboard_i" />
+		
+		<ImageView
+		    android:id="@+id/img4"
+		    android:layout_width="100dip"
+		    android:layout_height="wrap_content"
+		    android:scaleType="centerInside"
+		    android:layout_centerInParent="true"   
+		    android:src="@drawable/signsec_pointer_01" />
+		<LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_below="@id/img3"
+		    android:layout_marginTop="0dip"
+		    android:orientation="horizontal"
+		    android:gravity="center"
+		    >
+			<TextView
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="电流："			    	    		    
+			    android:textColor="@color/black" 			    
+		        android:textSize="16sp" 
+		        android:gravity="center"		        
+		        />
+			<views.RiseNumberTextView
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:id="@+id/tx_i"		    
+			    android:text="0"		   			   
+		        android:textColor="@color/purple" 
+		        android:textSize="24sp" 
+		        android:gravity="center"
+			    />
+			<TextView
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="  A"
+			    android:layout_below="@id/img3"			    		    
+			    android:textColor="@color/grey" 			    
+		        android:textSize="19sp" 
+		        android:gravity="center"		      
+		        />
+		</LinearLayout>
+		</RelativeLayout>
+		 <!--  第二个仪表结束 -->
+	</LinearLayout>
+	
+    <LinearLayout 
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <!-- 第三个仪表 -->
+	   
+	    <RelativeLayout  
+		    android:layout_width="200dip"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"	
+		    android:layout_gravity="center"   	    
+		    android:gravity="center"		   
+		    >
+		<!--     功率仪表盘 -->
+	    <ImageView
+	        android:layout_width="100dip"
+	        android:layout_height="wrap_content"
+	        android:scaleType="centerInside"
+	        android:layout_centerInParent="true"   
+	        android:id="@+id/img5"	       
+	        android:src="@drawable/dashboard_p" />
+		
+		<ImageView
+		    android:id="@+id/img6"
+		    android:layout_width="100dip"
+		    android:layout_height="wrap_content"
+		     android:layout_centerInParent="true"     
+		    android:scaleType="centerInside"
+		    android:src="@drawable/signsec_pointer_01" />
+		<LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_below="@id/img5"
+		    android:layout_marginTop="0dip"
+		    android:orientation="horizontal"
+		    android:gravity="center"
+		    >
+			<TextView
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="功率："			    	    		    
+			    android:textColor="@color/black" 			    
+		        android:textSize="16sp" 
+		        android:gravity="center"		        
+		        />
+			<views.RiseNumberTextView
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:id="@+id/tx_p"		    
+			    android:text="0"		   			   
+		        android:textColor="@color/purple" 
+		        android:textSize="24sp" 
+		        android:gravity="center"
+			    />
+			<TextView
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="  W"
+			    android:layout_below="@id/img5"			    		    
+			    android:textColor="@color/grey" 			    
+		        android:textSize="19sp" 
+		        android:gravity="center"		      
+		        />
+		</LinearLayout>
+		</RelativeLayout>
+		 <!--  第三个仪表结束 -->
+	</LinearLayout>
+</LinearLayout>
