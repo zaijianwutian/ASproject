@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:gravity="center"
+   
+    >    
+   <ImageView
+	   android:id="@+id/image"
+	   android:padding="5dip"
+	   android:layout_width="fill_parent"
+	   android:layout_height="wrap_content"
+	   android:scaleType="centerCrop"	   
+	   android:src="@drawable/light_on"
+	   />   
+   <TextView
+       android:id="@+id/name"
+       android:layout_width="fill_parent"
+       android:layout_height="45dip"
+       android:gravity="center"
+       android:textColor="@color/bigred"
+		android:textSize="24px"
+		android:ellipsize="end"
+		android:maxLines="2"
+       android:text="插座"
+       />
+
+</LinearLayout>

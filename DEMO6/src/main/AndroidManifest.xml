@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.suntrans.demo6">
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.RESTART_PACKAGES"/> 
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="16" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:theme="@android:style/Theme.Light.NoTitleBar" 
+        android:label="@string/app_name"
+         >
+         <!--   欢迎页 -->
+         <activity       
+            android:name="Welcome_Activity"
+            android:screenOrientation="portrait"
+            android:label="互联网+演示" >
+            <intent-filter>      <!-- 下面两行设置初始activity -->
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+         </activity>
+        <!--  主页面 -->
+         <activity       
+            android:name="Main_Activity"
+            android:screenOrientation="portrait"
+            android:label="主页面" >            
+       </activity>
+		<activity                 
+            android:name="SwitchInfo_Activity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:label="参数查看" >            
+        </activity>
+        
+		<activity
+            android:name="ControlInfo_Activity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:label="参数校正" >
+        </activity>
+    </application>
+
+</manifest>
