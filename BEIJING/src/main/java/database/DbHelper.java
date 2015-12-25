@@ -49,7 +49,7 @@ public class DbHelper extends SQLiteOpenHelper {
 				+ "Name TEXT,"     //音频名称
 				+ "Pinyin TEXT,"    //拼音
 				+ "VoiceNum TEXT);"; //音频对应的地址
-		db.execSQL(sql4);    //创建音频
+		db.execSQL(sql4);    //创建音频表
 		
 
 		

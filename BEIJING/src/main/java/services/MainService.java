@@ -35,8 +35,9 @@ import convert.Converts;
  */
 public class MainService extends Service {
     public Socket client=null;    //保持TCP连接的socket
-    public String serverip="61.235.65.160";     //服务器IP
- //   public String serverip="192.168.0.52";
+    private String serverip="192.168.1.4";
+   // public String serverip="61.235.65.160";     //服务器IP
+  //  public String serverip="192.168.0.52";
     public int port=8081;    //服务器端口
     private String Addr="0001";    //第六感官的地址，从0000到ffff。跟用户名相对应
     private IBinder binder;
@@ -114,37 +115,38 @@ public class MainService extends Service {
                                     }
                         }
                         catch (Exception e) {			// 发送出错，证明TCP断开了连接，重新建立连接
-                            try
-                            {
-                                if(client!=null) {
+                            try {
+                                if (client != null) {
+                                    Log.i("Info", "isConnected==>"+String.valueOf(client.isConnected()));
+                                    Log.i("Info", "isoutputShutdown==>" + String.valueOf(client.isOutputShutdown()));
+                                    Log.i("Info", "isinputshutdowm==>" + String.valueOf(client.isInputShutdown()));
                                     client.close();
                                     client = null;
                                 }
+
                                 InetAddress serverAddr = InetAddress.getByName(serverip);// TCPServer.SERVERIP
-                                client = new Socket(serverAddr,port);   //新建TCP连接
+                                client = new Socket(serverAddr, port);   //新建TCP连接
                                 new TCPServerThread().start();
-                                out=new DataOutputStream(client.getOutputStream());
+                                out = new DataOutputStream(client.getOutputStream());
                                 Thread.sleep(100);
-                                String toServer="ab70 "+SerialNumber;  //发送手机地址，发送后手机才能接收到服务器的数据
-                                toServer.replace(" ","");    //去掉空格
-                                byte[] bt=null;
-                                bt= Converts.HexString2Bytes(toServer);
-                                String str=toServer+Converts.GetCRC(bt, 2, bt.length);   //添加校验码
-                                byte[] bt1=Converts.HexString2Bytes(str);      //将完整的命令转换成十六进制
-                                if(!client.isClosed())
-                                {
+                                String toServer = "ab70 " + SerialNumber;  //发送手机地址，发送后手机才能接收到服务器的数据
+                                toServer.replace(" ", "");    //去掉空格
+                                byte[] bt = null;
+                                bt = Converts.HexString2Bytes(toServer);
+                                String str = toServer + Converts.GetCRC(bt, 2, bt.length);   //添加校验码
+                                byte[] bt1 = Converts.HexString2Bytes(str);      //将完整的命令转换成十六进制
+                                if (!client.isClosed()) {
                                     out.write(bt1);
                                     out.flush();
                                 }
                                 Thread.sleep(100);
-                                toServer = "ab68"+order;    //指令，添加包头和第六感官地址
-                                toServer.replace(" ","");    //去掉空格
-                                bt=null;
-                                bt=Converts.HexString2Bytes(toServer);
-                                str=toServer+Converts.GetCRC(bt, 4, bt.length)+"0d0a";   //添加校验码，和包尾
-                                bt1=Converts.HexString2Bytes(str);      //将完整的命令转换成十六进制
-                                if(!client.isClosed())
-                                {
+                                toServer = "ab68" + order;    //指令，添加包头和第六感官地址
+                                toServer.replace(" ", "");    //去掉空格
+                                bt = null;
+                                bt = Converts.HexString2Bytes(toServer);
+                                str = toServer + Converts.GetCRC(bt, 4, bt.length) + "0d0a";   //添加校验码，和包尾
+                                bt1 = Converts.HexString2Bytes(str);      //将完整的命令转换成十六进制
+                                if (!client.isClosed()) {
                                     out.write(bt1);
                                     out.flush();
                                 }
@@ -202,18 +204,18 @@ public class MainService extends Service {
     public void onDestroy() {
         Log.v("Service", "ServiceDemo OnDestroy");
         if(myNetReceiver!=null){
-            unregisterReceiver(myNetReceiver);
+            unregisterReceiver(myNetReceiver);   //注销接收网络变化的广播通知的广播接收器
         }
         if(client!=null) {
             try {
-                client.close();
+                client.close();     //关闭与服务器的tcp连接
                 client = null;
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
         }
-        super.onDestroy();
+        super.onDestroy();   //调用父类onDestroy方法释放资源
     }
 
     public class TCPServerThread extends Thread   //监听服务器发回的信息
@@ -300,8 +302,14 @@ public class MainService extends Service {
 
                     if(netInfo.getType()==ConnectivityManager.TYPE_WIFI){
                         Log.i("Internet","网络改变==>网络变成了wifi");
+                     //   Log.i("Internet", "状态：isClosed?" + String.valueOf(client.isClosed()) + "; isoutputshutdown?" + String.valueOf(client.isOutputShutdown()) +
+                     //           "; isInputshutdown?" + String.valueOf(client.isInputShutdown()) + ";  有网？" + String.valueOf(ping()));
                         /////WiFi网络
-
+                        if(client!=null) {
+                            Log.i("Internet", "isConnected==>" + String.valueOf(client.isConnected()));
+                            Log.i("Internet", "isoutputShutdown==>" + String.valueOf(client.isOutputShutdown()));
+                            Log.i("Internet", "isinputshutdowm==>" + String.valueOf(client.isInputShutdown()));
+                        }
                     }else if(netInfo.getType()==ConnectivityManager.TYPE_ETHERNET) {
                         /////有线网络
                         Log.i("Internet", "网络改变==>网络变成了有线");
@@ -313,6 +321,14 @@ public class MainService extends Service {
                 } else {
                     ////////网络断开
                         Log.i("Internet","网络改变==>网络断开");
+                    if(client!=null) {
+                        Log.i("Internet", "isConnected==>" + String.valueOf(client.isConnected()));
+                        Log.i("Internet", "isoutputShutdown==>" + String.valueOf(client.isOutputShutdown()));
+                        Log.i("Internet", "isinputshutdowm==>" + String.valueOf(client.isInputShutdown()));
+
+                    } //   Log.i("Internet", "状态：isClosed?" + String.valueOf(client.isClosed()) + "; isoutputshutdown?" + String.valueOf(client.isOutputShutdown()) +
+                       //     "; isInputshutdown?" + String.valueOf(client.isInputShutdown()) + ";  有网？" + String.valueOf(ping()));
+
                 }
             }
 

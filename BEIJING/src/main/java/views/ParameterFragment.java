@@ -60,6 +60,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ParameterFragment extends Fragment {
+    private int isVisible=0;   //本页面是否可见
     private PullToRefreshListView mPullRefreshListView;    //下拉列表控件
     private ListView list;   //列表
     private SeekBar seekbar_r,seekbar_g,seekbar_b;   //三个滚动条，红绿蓝
@@ -76,6 +77,8 @@ public class ParameterFragment extends Fragment {
     private ArrayList<Map<String, String>> data_room1 = new ArrayList<Map<String,String>>();   ///室内环境  里间
     private ArrayList<Map<String, String>> data_air1=new ArrayList<Map<String, String>>();    //空气质量     里间
     private MainService.ibinder binder=null;    //用于activity与service通讯的接口类
+    private int x;
+    private int y;   //记录list滚动到的位置
     private String which="100";    //用来标示是否有命令正在发送还没有返回，100表示没有正在发送的数据,2表示刷新所有参数，
     private long time;   //触发progressdialog显示的时间
     public Handler handler1=new Handler()   //接收到TCP发回的数据后调用，用于更新列表中的开关状态，即反馈
@@ -88,6 +91,8 @@ public class ParameterFragment extends Fragment {
                     addr=Address.addr_out;
                 else
                     addr=Address.addr_in;
+                if(isVisible==1)   //如果页面可见，则进行刷新
+                    mPullRefreshListView.setRefreshing();
             }
             else   //收到新的数据，更新数据
             {
@@ -119,7 +124,7 @@ public class ParameterFragment extends Fragment {
                         {
                             //计算得到各个参数的值，顺序是按寄存器顺序来的
                             double tmp = (((a[7] + 256) % 256) * 256 + (a[8] + 256) % 256) / 100.0;   //温度
-                            double humidity = (((a[13] + 256) % 256) * 256 + (a[14] + 256) % 256) + 20;   //湿度
+                            double humidity = (((a[13] + 256) % 256) * 256 + (a[14] + 256) % 256) ;   //湿度
                             double atm = (((a[15] + 256) % 256) * 256 + (a[16] + 256) % 256) / 100.0;       //大气压
                             double arofene = (((a[17] + 256) % 256) * 256 + (a[18] + 256) % 256) / 1000.0;    //甲醛
                             double smoke = (((a[19] + 256) % 256) * 256 + (a[20] + 256) % 256);       //烟雾
@@ -340,7 +345,7 @@ public class ParameterFragment extends Fragment {
                         {
                             //计算得到各个参数的值，顺序是按寄存器顺序来的
                             double tmp = (((a[7] + 256) % 256) * 256 + (a[8] + 256) % 256) / 100.0;   //温度
-                            double humidity = (((a[13] + 256) % 256) * 256 + (a[14] + 256) % 256) + 20;   //湿度
+                            double humidity = (((a[13] + 256) % 256) * 256 + (a[14] + 256) % 256) ;   //湿度
                             double atm = (((a[15] + 256) % 256) * 256 + (a[16] + 256) % 256) / 100.0;       //大气压
                             double arofene = (((a[17] + 256) % 256) * 256 + (a[18] + 256) % 256) / 1000.0;    //甲醛
                             double smoke = (((a[19] + 256) % 256) * 256 + (a[20] + 256) % 256);       //烟雾
@@ -543,8 +548,8 @@ public class ParameterFragment extends Fragment {
                             }
                             data_room1.get(4).put("Evaluate", eva);     //光感
                             data_room1.get(4).put("Progress", String.valueOf(progress));
-                            int x=mPullRefreshListView.getScrollX();
-                            int y=mPullRefreshListView.getScrollY();
+                           // int x=mPullRefreshListView.getScrollX();
+                           // int y=mPullRefreshListView.getScrollY();
                             ListInit();
                             mPullRefreshListView.scrollTo(x,y);
                             //   list.setAdapter(new Adapter());    //为listview设置适配器
@@ -612,12 +617,15 @@ public class ParameterFragment extends Fragment {
         if (isVisibleToUser)
         {    //可见时
             try
-            {   Log.i("Order", "parameter可见");
+            {
+                // Log.i("Order", "parameter可见");
+                isVisible=1;
                 mPullRefreshListView.setRefreshing();
             }
             catch (Exception e)
             {
                 // TODO Auto-generated catch block
+                isVisible=0;
                 e.printStackTrace();
             }
             //相当于Fragment的onResume

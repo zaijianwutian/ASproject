@@ -68,6 +68,7 @@ import services.MainService;
 
 public class ControlFragment extends Fragment{
     private int result_code=0;
+    private int isVisible=0;    //本页面是否可见
     private GridView grid;    //下拉GridView中的GridView
     private PullToRefreshGridView gridView;  //下拉GridView
     private byte[] bits={(byte)0x01,(byte)0x02,(byte)0x04,(byte)0x08,(byte)0x10,(byte)0x20,(byte)0x40,(byte)0x80};     //从1到8只有一位是1，用于按位与计算，获取某一位的值
@@ -90,6 +91,8 @@ public class ControlFragment extends Fragment{
                     addr= Address.addr_out;
                 else
                     addr=Address.addr_in;
+                if(isVisible==1)   //如果页面可见，则进行刷新
+                    gridView.setRefreshing();
                // grid.setAdapter(new Adapter());
             }
             else   //解析数据
@@ -118,7 +121,7 @@ public class ControlFragment extends Fragment{
                 {
                     if (s.substring(10, 12).equals("03"))   //如果是读寄存器状态，解析出开关状态
                     {
-                        if (s.substring(12, 14).equals("07"))
+                        if (s.substring(12, 14).equals("0e")||s.substring(12,14).equals("07"))
                         {
                             String[] states={"0","0","0","0","0","0","0","0","0","0"};   //十个通道的状态，state[0]对应1通道
                             for(int i=0;i<8;i++)   //先获取前八位的开关状态
@@ -176,7 +179,7 @@ public class ControlFragment extends Fragment{
                 {
                     if (s.substring(10, 12).equals("03"))   //如果是读寄存器状态，解析出开关状态
                     {
-                        if (s.substring(12, 14).equals("07"))
+                        if (s.substring(12, 14).equals("0e")||s.substring(12,14).equals("07"))
                         {
                             String[] states={"0","0","0","0","0","0","0","0","0","0"};   //十个通道的状态，state[0]对应1通道
                             for(int i=0;i<8;i++)   //先获取前八位的开关状态
@@ -228,6 +231,7 @@ public class ControlFragment extends Fragment{
                         ((Adapter)grid.getAdapter()).notifyDataSetChanged();
                     }
                 }
+              //  Log.i("Order", "外间总开关：" + String.valueOf(Mainstate) + "里间总开关" + String.valueOf(Mainstate1));
             }
         }
     };
@@ -287,6 +291,7 @@ public class ControlFragment extends Fragment{
             try
             {
                 //if (gridView != null)
+                isVisible=1;
                 gridView.setRefreshing();
             }
             catch (Exception e)
@@ -299,8 +304,8 @@ public class ControlFragment extends Fragment{
         {
             //相当于Fragment的onPause    ,关闭socket连接
             try {
-
-                Log.i("Order","control不可见");
+                isVisible=0;
+               // Log.i("Order","control不可见");
             }
             catch (Exception e)
             {
@@ -566,7 +571,8 @@ public class ControlFragment extends Fragment{
                         }, 250); //0.25s后判断是否关闭progressdialog，若没关闭，则进行关闭
 
 
-                        if (state.equals("0") && Mainstate == 0)  //如果是要打开开关，并且总开关没有打开，则先打开总开关
+                        if (state.equals("0") &&
+                            (Mainstate == 0&&addr.equals(Address.addr_out)||(Mainstate1==0&&addr.equals(Address.addr_in))) ) //如果是要打开开关，并且总开关没有打开，则先打开总开关
                         {
                             new Thread() {
                                     public void run() {
@@ -580,7 +586,7 @@ public class ControlFragment extends Fragment{
                                 }.start();
                         }
                          else
-                             ((Main_Activity) getActivity()).binder.sendOrder(addr+"0106 030" + (channel.equals("10") ? "a" : channel) + " 000" + (state.equals("0") ? "1" : "0"));
+                             ((Main_Activity) getActivity()).binder.sendOrder(addr + "0106 030" + (channel.equals("10") ? "a" : channel) + " 000" + (state.equals("0") ? "1" : "0"));
 
                     }
                 }

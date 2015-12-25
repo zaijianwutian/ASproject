@@ -141,7 +141,7 @@ public class Welcome_Activity extends Activity {
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 1);
 			cva.put("Area", "主房间");
-			cva.put("Name", "门前灯");
+			cva.put("Name", "会议室");
 			cva.put("VoiceName", "未配置");    //语音名称
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
@@ -157,7 +157,7 @@ public class Welcome_Activity extends Activity {
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 2);
 			cva.put("Area", "主房间");
-			cva.put("Name", "主灯");
+			cva.put("Name", "门灯");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
@@ -173,7 +173,7 @@ public class Welcome_Activity extends Activity {
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 3);
 			cva.put("Area", "主房间");
-			cva.put("Name", "书桌灯");
+			cva.put("Name", "射灯");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
@@ -189,7 +189,7 @@ public class Welcome_Activity extends Activity {
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 4);
 			cva.put("Area", "卫生间");
-			cva.put("Name", "镜前灯");
+			cva.put("Name", "筒灯");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
@@ -205,13 +205,13 @@ public class Welcome_Activity extends Activity {
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 5);
 			cva.put("Area", "厨房");
-			cva.put("Name", "顶灯");
+			cva.put("Name", "客厅");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
 
 			//第六个通道
-			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.bulb);
+			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.bulb1);
 			os = new ByteArrayOutputStream();
 			bmp_room.compress(Bitmap.CompressFormat.PNG, 100, os);    //os是输出流，存放图片
 			cva = new ContentValues();
@@ -221,13 +221,13 @@ public class Welcome_Activity extends Activity {
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 6);
 			cva.put("Area", "主房间");
-			cva.put("Name", "二层顶灯");
+			cva.put("Name", "灯带");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
 
 			//第七个通道
-			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.bulb);
+			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.bulb1);
 			os = new ByteArrayOutputStream();
 			bmp_room.compress(Bitmap.CompressFormat.PNG, 100, os);    //os是输出流，存放图片
 			cva = new ContentValues();
@@ -237,13 +237,13 @@ public class Welcome_Activity extends Activity {
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 7);
 			cva.put("Area", "主房间");
-			cva.put("Name", "空调");
+			cva.put("Name", "画面灯");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
 
 			//第八个通道
-			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.bulb);
+			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.socket);
 			os = new ByteArrayOutputStream();
 			bmp_room.compress(Bitmap.CompressFormat.PNG, 100, os);    //os是输出流，存放图片
 			cva = new ContentValues();
@@ -253,13 +253,13 @@ public class Welcome_Activity extends Activity {
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 8);
 			cva.put("Area", "主房间");
-			cva.put("Name", "电视机");
+			cva.put("Name", "无");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
 
 			//第九个通道
-			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.bulb);
+			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.socket);
 			os = new ByteArrayOutputStream();
 			bmp_room.compress(Bitmap.CompressFormat.PNG, 100, os);    //os是输出流，存放图片
 			cva = new ContentValues();
@@ -269,13 +269,13 @@ public class Welcome_Activity extends Activity {
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 9);
 			cva.put("Area", "卫生间");
-			cva.put("Name", "热水器");
+			cva.put("Name", "无");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
 
 			//第十个通道
-			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.bulb);
+			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.socket);
 			os = new ByteArrayOutputStream();
 			bmp_room.compress(Bitmap.CompressFormat.PNG, 100, os);    //os是输出流，存放图片
 			cva = new ContentValues();
@@ -285,88 +285,88 @@ public class Welcome_Activity extends Activity {
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 10);
 			cva.put("Area", "卫生间");
-			cva.put("Name", "换气扇");
+			cva.put("Name", "无");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
 
 			///里间的开关
 			//第一个通道
-			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.bulb);
+			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.socket);
 			os = new ByteArrayOutputStream();
 			bmp_room.compress(Bitmap.CompressFormat.PNG, 100, os);    //os是输出流，存放图片
 			cva = new ContentValues();
 			cva.put("Room", "里间");
-			cva.put("State", "1");
+			cva.put("State", "0");
 			cva.put("MainAddr", "0003");   //第六感官地址
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 1);
 			cva.put("Area", "主房间");
-			cva.put("Name", "门前灯");
+			cva.put("Name", "无");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
 
 			//第二个通道
-			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.bulb);
+			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.socket);
 			os = new ByteArrayOutputStream();
 			bmp_room.compress(Bitmap.CompressFormat.PNG, 100, os);    //os是输出流，存放图片
 			cva = new ContentValues();
 			cva.put("Room", "里间");
-			cva.put("State", "1");
+			cva.put("State", "0");
 			cva.put("MainAddr", "0003");   //第六感官地址
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 2);
 			cva.put("Area", "主房间");
-			cva.put("Name", "主灯");
+			cva.put("Name", "无");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
 
 			//第三个通道
-			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.bulb);
+			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.socket);
 			os = new ByteArrayOutputStream();
 			bmp_room.compress(Bitmap.CompressFormat.PNG, 100, os);    //os是输出流，存放图片
 			cva = new ContentValues();
 			cva.put("Room", "里间");
-			cva.put("State", "1");
+			cva.put("State", "0");
 			cva.put("MainAddr", "0003");   //第六感官地址
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 3);
 			cva.put("Area", "主房间");
-			cva.put("Name", "书桌灯");
+			cva.put("Name", "无");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
 
 			//第四个通道
-			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.bulb);
+			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.socket);
 			os = new ByteArrayOutputStream();
 			bmp_room.compress(Bitmap.CompressFormat.PNG, 100, os);    //os是输出流，存放图片
 			cva = new ContentValues();
 			cva.put("Room", "里间");
-			cva.put("State", "1");
+			cva.put("State", "0");
 			cva.put("MainAddr", "0003");   //第六感官地址
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 4);
 			cva.put("Area", "卫生间");
-			cva.put("Name", "镜前灯");
+			cva.put("Name", "无");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
 
 			//第五个通道
-			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.bulb);
+			bmp_room = BitmapFactory.decodeResource(Welcome_Activity.this.getResources(), R.drawable.socket);
 			os = new ByteArrayOutputStream();
 			bmp_room.compress(Bitmap.CompressFormat.PNG, 100, os);    //os是输出流，存放图片
 			cva = new ContentValues();
 			cva.put("Room", "里间");
-			cva.put("State", "1");
+			cva.put("State", "0");
 			cva.put("MainAddr", "0003");   //第六感官地址
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 5);
 			cva.put("Area", "厨房");
-			cva.put("Name", "顶灯");
+			cva.put("Name", "无");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
@@ -377,12 +377,12 @@ public class Welcome_Activity extends Activity {
 			bmp_room.compress(Bitmap.CompressFormat.PNG, 100, os);    //os是输出流，存放图片
 			cva = new ContentValues();
 			cva.put("Room", "里间");
-			cva.put("State", "1");
+			cva.put("State", "0");
 			cva.put("MainAddr", "0003");   //第六感官地址
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 6);
 			cva.put("Area", "主房间");
-			cva.put("Name", "二层顶灯");
+			cva.put("Name", "灯带");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
@@ -393,12 +393,12 @@ public class Welcome_Activity extends Activity {
 			bmp_room.compress(Bitmap.CompressFormat.PNG, 100, os);    //os是输出流，存放图片
 			cva = new ContentValues();
 			cva.put("Room", "里间");
-			cva.put("State", "1");
+			cva.put("State", "0");
 			cva.put("MainAddr", "0003");   //第六感官地址
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 7);
 			cva.put("Area", "主房间");
-			cva.put("Name", "空调");
+			cva.put("Name", "餐厅");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
@@ -409,12 +409,12 @@ public class Welcome_Activity extends Activity {
 			bmp_room.compress(Bitmap.CompressFormat.PNG, 100, os);    //os是输出流，存放图片
 			cva = new ContentValues();
 			cva.put("Room", "里间");
-			cva.put("State", "1");
+			cva.put("State", "0");
 			cva.put("MainAddr", "0003");   //第六感官地址
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 8);
 			cva.put("Area", "主房间");
-			cva.put("Name", "电视机");
+			cva.put("Name", "射灯");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
@@ -425,12 +425,12 @@ public class Welcome_Activity extends Activity {
 			bmp_room.compress(Bitmap.CompressFormat.PNG, 100, os);    //os是输出流，存放图片
 			cva = new ContentValues();
 			cva.put("Room", "里间");
-			cva.put("State", "1");
+			cva.put("State", "0");
 			cva.put("MainAddr", "0003");   //第六感官地址
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 9);
 			cva.put("Area", "卫生间");
-			cva.put("Name", "热水器");
+			cva.put("Name", "办公室右");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库
@@ -441,12 +441,12 @@ public class Welcome_Activity extends Activity {
 			bmp_room.compress(Bitmap.CompressFormat.PNG, 100, os);    //os是输出流，存放图片
 			cva = new ContentValues();
 			cva.put("Room", "里间");
-			cva.put("State", "1");
+			cva.put("State", "0");
 			cva.put("MainAddr", "0003");   //第六感官地址
 			cva.put("RSAddr","01");		    //开关地址
 			cva.put("Channel", 10);
 			cva.put("Area", "卫生间");
-			cva.put("Name", "换气扇");
+			cva.put("Name", "办公室左");
 			cva.put("VoiceName", "未配置");
 			cva.put("Image", os.toByteArray());
 			row = db.insert("switchs_tb", null, cva);  //将数据添加到数据库

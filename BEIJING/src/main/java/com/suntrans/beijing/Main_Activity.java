@@ -152,33 +152,46 @@ public class Main_Activity extends FragmentActivity{
         tx_out.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                tx_in.setTextColor(getResources().getColor(R.color.white));
-                tx_in.setBackgroundColor(getResources().getColor(R.color.bg_action));
-                tx_out.setTextColor(getResources().getColor(R.color.bg_action));
-                tx_out.setBackgroundColor(getResources().getColor(R.color.white));
-                flag_room = "外间";
-                Message msg = new Message();   //新建Message，用于向handler传递数据
-                msg.arg1 = 1;    //通知Fragment房间发生了变化，让其更新页面显示
-                parameter.handler1.sendMessage(msg);
-                Message msg1 = new Message();   //新建Message，用于向handler传递数据
-                msg1.arg1 = 1;    //通知Fragment房间发生了变化，让其更新页面显示
-                control.handler1.sendMessage(msg1);
+
+                if(flag_room.equals("里间"))    //如果现在显示的是里间，则切换到外间，并通知正在显示的fragment
+                {
+                    tx_in.setTextColor(getResources().getColor(R.color.white));
+                    tx_in.setBackgroundColor(getResources().getColor(R.color.bg_action));
+                    tx_out.setTextColor(getResources().getColor(R.color.bg_action));
+                    tx_out.setBackgroundColor(getResources().getColor(R.color.white));
+                    flag_room = "外间";
+
+                        Message msg = new Message();   //新建Message，用于向handler传递数据
+                        msg.arg1 = 1;    //通知Fragment房间发生了变化，让其更新页面显示
+                        control.handler1.sendMessage(msg);
+
+                        Message msg1 = new Message();   //新建Message，用于向handler传递数据
+                        msg1.arg1 = 1;    //通知Fragment房间发生了变化，让其更新页面显示
+                        parameter.handler1.sendMessage(msg1);
+
+                }
             }
         });
         tx_in.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                tx_out.setTextColor(getResources().getColor(R.color.white));
-                tx_out.setBackgroundColor(getResources().getColor(R.color.bg_action));
-                tx_in.setTextColor(getResources().getColor(R.color.bg_action));
-                tx_in.setBackgroundColor(getResources().getColor(R.color.white));
-                flag_room="里间";
-                Message msg = new Message();   //新建Message，用于向handler传递数据
-                msg.arg1 = 1;    //通知Fragment房间发生了变化，让其更新页面显示
-                parameter.handler1.sendMessage(msg);
-                Message msg1 = new Message();   //新建Message，用于向handler传递数据
-                msg1.arg1 = 1;    //通知Fragment房间发生了变化，让其更新页面显示
-                control.handler1.sendMessage(msg1);
+                if(flag_room=="外间")
+                {
+                    tx_out.setTextColor(getResources().getColor(R.color.white));
+                    tx_out.setBackgroundColor(getResources().getColor(R.color.bg_action));
+                    tx_in.setTextColor(getResources().getColor(R.color.bg_action));
+                    tx_in.setBackgroundColor(getResources().getColor(R.color.white));
+                    flag_room = "里间";
+
+                        Message msg = new Message();   //新建Message，用于向handler传递数据
+                        msg.arg1 = 1;    //通知Fragment房间发生了变化，让其更新页面显示
+                        control.handler1.sendMessage(msg);
+
+                        Message msg1 = new Message();   //新建Message，用于向handler传递数据
+                        msg1.arg1 = 1;    //通知Fragment房间发生了变化，让其更新页面显示
+                        parameter.handler1.sendMessage(msg1);
+
+                }
             }
         });
         //tx_out.setOnClickListener(new MyOnClickListener(flag_state.equals("能源管控")?0:1));

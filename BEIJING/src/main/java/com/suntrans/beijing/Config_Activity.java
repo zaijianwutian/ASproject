@@ -118,7 +118,7 @@ public class Config_Activity extends Activity {
                 if(room.equals("外间"))
                     switch_voice.setState(state.equals("1")?true:false);
                 else
-                    switch_voice.setState(state.equals("1")?true:false);
+                    switch_voice.setState(state1.equals("1")?true:false);
             } else   //解析数据
             {
                 Map<String, Object> map = (Map<String, Object>) msg.obj;
@@ -148,7 +148,7 @@ public class Config_Activity extends Activity {
                     {
                         state1 = a[8] == 1 ? "1" : "0";
                         if(room.equals("里间"))
-                            switch_voice.setState(state.equals("1")?true:false);
+                            switch_voice.setState(state1.equals("1")?true:false);
                     }
                 }
                 //&&crc.equals(s.substring(s.length()-8,s.length()))
@@ -164,7 +164,7 @@ public class Config_Activity extends Activity {
                         {
                             state1 = (a[9] == 1 ? "1" : "0");
                             if (room.equals("里间"))
-                                switch_voice.setState(state.equals("1") ? true : false);
+                                switch_voice.setState(state1.equals("1") ? true : false);
                         }
                     }
                     else    //配置语音返回的数据
